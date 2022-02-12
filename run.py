@@ -1,5 +1,16 @@
 import random
 
+def print_6_mistakes():
+    print("  |------|- ")
+    print("  |      |  ")
+    print("  |      o  ")
+    print("  |     /|\\")
+    print("  |      |  ")
+    print("  |     / \\")
+    print(" /|\\")
+    print("/ | \\")
+    
+
 # Create list of words 
 words = ["hangman", "band", "house", "stereo", "tree", "swim",]
 # Create letters tried
