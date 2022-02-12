@@ -1,6 +1,7 @@
 import random
 
 
+# No mistakes
 def print_0_mistakes():
     print("  |------|- ")
     print("  |      |  ")
@@ -12,6 +13,7 @@ def print_0_mistakes():
     print("/ | \\      ")
 
 
+# 1 mistake
 def print_1_mistakes():
     print("  |------|- ")
     print("  |      |  ")
@@ -23,6 +25,7 @@ def print_1_mistakes():
     print("/ | \\      ")
 
 
+# 2 mistakes
 def print_2_mistakes():
     print("  |------|- ")
     print("  |      |  ")
@@ -34,6 +37,7 @@ def print_2_mistakes():
     print("/ | \\      ")
 
 
+# 3 mistakes
 def print_3_mistakes():
     print("  |------|- ")
     print("  |      |  ")
@@ -45,6 +49,7 @@ def print_3_mistakes():
     print("/ | \\      ")
 
 
+# 4 mistakes
 def print_4_mistakes():
     print("  |------|- ")
     print("  |      |  ")
@@ -56,6 +61,7 @@ def print_4_mistakes():
     print("/ | \\      ")
 
 
+# 5 mistakes
 def print_5_mistakes():
     print("  |------|- ")
     print("  |      0  ")
@@ -67,6 +73,7 @@ def print_5_mistakes():
     print("/ | \\      ")
 
 
+# 6 mistakes
 def print_6_mistakes():
     print("  |------|- ")
     print("  |      0  ")
@@ -78,6 +85,7 @@ def print_6_mistakes():
     print("/ | \\      ")
 
 
+# function to print game status
 def print_game_status():
     if mistakes == 0:
         print_0_mistakes()
@@ -94,6 +102,8 @@ def print_game_status():
     elif mistakes == 6:
         print_6_mistakes()
 
+
+# user input
     print("word: ", end='')
     for element in guesses:
         print(f"{element} ", end='')
@@ -102,20 +112,26 @@ def print_game_status():
 
 # Create list of words
 words = ["hangman", "band", "house", "stereo", "tree", "swim", "creator"]
+
 # Create letters tried
 guesses = []
-# Guesses tally
+
+# Guesses left
 remaining_guesses = 6
-# Mistakes tally
+
+# Mistakes made
 mistakes = 0
+
 # Randomize word selection
 word_index = random.randint(0, len(words)-1)
 word = words[word_index].upper()
 print(word)
 
-for i in range(len(words)):
+# Append an underscore for user to see as blank letter
+for i in range(len(word)):
     guesses.append('_')
 
+# Create game loop
 game_over = False
 
 while not game_over:
@@ -126,16 +142,19 @@ while not game_over:
     if not user_input:
         print("Thats not a letter. Please try again")
     else:
-        letter = user_input[0].upper()
+        letter = user_input.upper()
         if letter in word:
             for i in range(len(word)):
                 if word[i] == letter:
-                    guesses[i] =letter
+                    guesses[i] = letter
             if '_' not in guesses:
+                print(f"you win! the word was '{word}'")
                 game_over = True
         else:
             print("sorry, try again")
             remaining_guesses -= 1
             mistakes += 1
             if mistakes == 6:
+                print_6_mistakes()
+                print(f"You lose! the word was '{word}'")
                 game_over = True
