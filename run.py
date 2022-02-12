@@ -116,4 +116,14 @@ print(word)
 for i in range(len(words)):
     guesses.append('_')
 
-print_game_status()
+game_over = False
+
+while not game_over:
+    print_game_status()
+
+    user_input = input("Please enter a letter:\n")
+
+    if not user_input:
+        print("Thats not a letter. Please try again")
+    else:
+        pass
