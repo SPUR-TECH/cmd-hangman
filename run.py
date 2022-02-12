@@ -1,18 +1,78 @@
 import random
 
-def print_6_mistakes():
+def print_0_mistakes():
+    print("  |------|- ")
+    print("  |      |  ")
+    print("  |         ")
+    print("  |         ")
+    print("  |         ")
+    print("  |         ")
+    print(" /|\\       ")
+    print("/ | \\      ")
+
+def print_1_mistakes():
     print("  |------|- ")
     print("  |      |  ")
     print("  |      o  ")
+    print("  |         ")
+    print("  |         ")
+    print("  |         ")
+    print(" /|\\       ")
+    print("/ | \\      ")
+
+def print_2_mistakes():
+    print("  |------|- ")
+    print("  |      |  ")
+    print("  |      o  ")
+    print("  |      |  ")
+    print("  |         ")
+    print("  |         ")
+    print(" /|\\       ")
+    print("/ | \\      ")
+
+def print_3_mistakes():
+    print("  |------|- ")
+    print("  |      |  ")
+    print("  |      o  ")
+    print("  |     /|  ")
+    print("  |         ")
+    print("  |         ")
+    print(" /|\\       ")
+    print("/ | \\      ")
+
+def print_4_mistakes():
+    print("  |------|- ")
+    print("  |      |  ")
+    print("  |      0  ")
+    print("  |     /|\\")
+    print("  |         ")
+    print("  |         ")
+    print(" /|\\       ")
+    print("/ | \\      ")
+
+def print_5_mistakes():
+    print("  |------|- ")
+    print("  |      0  ")    
+    print("  |     /|\\")
+    print("  |      |  ")
+    print("  |         ")
+    print("  |         ")
+    print(" /|\\       ")
+    print("/ | \\      ")
+
+def print_6_mistakes():
+    print("  |------|- ")
+    print("  |      0  ")    
     print("  |     /|\\")
     print("  |      |  ")
     print("  |     / \\")
-    print(" /|\\")
-    print("/ | \\")
+    print("  |         ")
+    print(" /|\\       ")
+    print("/ | \\      ")
     
 
 # Create list of words 
-words = ["hangman", "band", "house", "stereo", "tree", "swim",]
+words = ["hangman", "band", "house", "stereo", "tree", "swim", "creator"]
 # Create letters tried
 tries = []
 # Lives tally
