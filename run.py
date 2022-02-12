@@ -94,7 +94,6 @@ def print_game_status():
     elif mistakes == 6:
         print_6_mistakes()
 
-
     print("word: ", end='')
     for element in guesses:
         print(f"{element} ", end='')
@@ -113,5 +112,8 @@ mistakes = 0
 word_index = random.randint(0, len(words)-1)
 word = words[word_index].upper()
 print(word)
+
+for i in range(len(words)):
+    guesses.append('_')
 
 print_game_status()
