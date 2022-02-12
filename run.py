@@ -126,4 +126,16 @@ while not game_over:
     if not user_input:
         print("Thats not a letter. Please try again")
     else:
-        pass
+        letter = user_input[0].upper()
+        if letter in word:
+            for i in range(len(word)):
+                if word[i] == letter:
+                    guesses[i] =letter
+            if '_' not in guesses:
+                game_over = True
+        else:
+            print("sorry, try again")
+            remaining_guesses -= 1
+            mistakes += 1
+            if mistakes == 6:
+                game_over = True
