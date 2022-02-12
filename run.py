@@ -95,12 +95,18 @@ def print_game_status():
         print_6_mistakes()
 
 
+    print("word: ", end='')
+    for element in guesses:
+        print(f"{element} ", end='')
+    print(f"\nYou have {remaining_guesses} guess(es) left")
+
+
 # Create list of words
 words = ["hangman", "band", "house", "stereo", "tree", "swim", "creator"]
 # Create letters tried
-tries = []
-# Lives tally
-tries_left = 6
+guesses = []
+# Guesses tally
+remaining_guesses = 6
 # Mistakes tally
 mistakes = 0
 # Randomize word selection
@@ -108,4 +114,4 @@ word_index = random.randint(0, len(words)-1)
 word = words[word_index].upper()
 print(word)
 
-print_6_mistakes()
+print_game_status()
