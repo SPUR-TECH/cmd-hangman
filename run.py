@@ -56,7 +56,7 @@ def print_3_mistakes():
 def print_4_mistakes():
     print("  |------|- ")
     print("  |      |  ")
-    print("  |      0  ")
+    print("  |      o  ")
     print("  |     /|\\")
     print("  |      |  ")
     print("  |         ")
@@ -67,7 +67,8 @@ def print_4_mistakes():
 # 5 mistakes
 def print_5_mistakes():
     print("  |------|- ")
-    print("  |      0  ")
+    print("  |      |  ")
+    print("  |      o  ")
     print("  |     /|\\")
     print("  |      |  ")
     print("  |     /   ")
@@ -79,6 +80,7 @@ def print_5_mistakes():
 # 6 mistakes
 def print_6_mistakes():
     print("  |------|- ")
+    print("  |      |  ")
     print("  |      0  ")
     print("  |     /|\\")
     print("  |      |  ")
@@ -150,10 +152,14 @@ while not game_over:
 # Users guesses
     user_input = input("Please enter a letter:\n")
     letter = user_input.upper()
+    used_letters += user_input.upper()
+    print(f'"USED LETTERS:" {used_letters}')
 
 # Display error message if not a letter
     if letter not in alphabet:
         print("Thats not a letter. Please try again")
+    elif user_input in used_letters:
+        print('"ALREADY USED!!"')
     else:
         # Display win message if all letters guessed
         if letter in word:
@@ -173,3 +179,14 @@ while not game_over:
                 print_6_mistakes()
                 print(f"You lose! the word was '{word}'")
                 game_over = True
+
+if __name__ == '__main__':
+    while True:
+        print("Do you want to play again?")
+        print('Y/N')
+        answer = input()
+        if answer.lower == 'y':
+            game_over = False
+        if answer.lower == 'n':
+            print("come back soon!!")
+        break
