@@ -1,5 +1,8 @@
 import random
 
+print("LETS PLAY HANGMAN!!")
+print("------------------------")
+
 
 # No mistakes
 def print_0_mistakes():
@@ -113,8 +116,15 @@ def print_game_status():
 # Create list of words
 words = ["hangman", "band", "house", "stereo", "tree", "swim", "creator"]
 
+# Create alphabet
+alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+            "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+
 # Create letters tried
 guesses = []
+
+# Create used letters
+used_letters = []
 
 # Guesses left
 remaining_guesses = 6
@@ -137,19 +147,24 @@ game_over = False
 while not game_over:
     print_game_status()
 
+# Users guesses
     user_input = input("Please enter a letter:\n")
+    letter = user_input.upper()
 
-    if not user_input:
+# Display error message if not a letter
+    if letter not in alphabet:
         print("Thats not a letter. Please try again")
     else:
-        letter = user_input.upper()
+        # Display win message if all letters guessed
         if letter in word:
             for i in range(len(word)):
                 if word[i] == letter:
                     guesses[i] = letter
             if '_' not in guesses:
-                print(f"you win! the word was '{word}'")
+                print(f"YOU WIN!!! the word was '{word}'")
                 game_over = True
+        # Display try again message if letter not in word and
+        #  lose message when all tries are used and end game
         else:
             print("sorry, try again")
             remaining_guesses -= 1
