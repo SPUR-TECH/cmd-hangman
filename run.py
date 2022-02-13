@@ -185,8 +185,8 @@ if __name__ == '__main__':
         print("Do you want to play again?")
         print('Y/N')
         answer = input()
-        if answer.lower == 'y':
+        if answer.upper == 'Y':
             game_over = False
-        if answer.lower == 'n':
+        if answer.upper == 'N':
             print("come back soon!!")
         break
