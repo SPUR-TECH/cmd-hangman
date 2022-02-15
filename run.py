@@ -152,15 +152,15 @@ while not game_over:
 # Users guesses
     user_input = input("Please enter a letter:\n")
     letter = user_input.upper()
-    used_letters += user_input.upper()
-    print(f'"USED LETTERS:" {used_letters}')
 
 # Display error message if not a letter
     if letter not in alphabet:
         print("Thats not a letter. Please try again")
-    elif user_input in used_letters:
+    elif letter in used_letters:
         print('"ALREADY USED!!"')
     else:
+        used_letters += user_input.upper()
+        print(f'"USED LETTERS:" {used_letters}')
         # Display win message if all letters guessed
         if letter in word:
             for i in range(len(word)):
@@ -185,6 +185,7 @@ if __name__ == '__main__':
         print("Do you want to play again?")
         print('Y/N')
         answer = input()
+        print(answer)
         if answer.upper == 'Y':
             game_over = False
         if answer.upper == 'N':
