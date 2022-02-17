@@ -1,3 +1,4 @@
+'''import random to randomize words'''
 import random
 
 print("LETS PLAY HANGMAN!!")
@@ -6,6 +7,7 @@ print("------------------------")
 
 # No mistakes
 def print_0_mistakes():
+    '''Display first image with no mistakes'''
     print("  |------|- ")
     print("  |      |  ")
     print("  |         ")
@@ -18,6 +20,7 @@ def print_0_mistakes():
 
 # 1 mistake
 def print_1_mistakes():
+    '''Display second image with one mistake'''
     print("  |------|- ")
     print("  |      |  ")
     print("  |      o  ")
@@ -30,6 +33,7 @@ def print_1_mistakes():
 
 # 2 mistakes
 def print_2_mistakes():
+    '''Display third image with two mistake'''
     print("  |------|- ")
     print("  |      |  ")
     print("  |      o  ")
@@ -42,6 +46,7 @@ def print_2_mistakes():
 
 # 3 mistakes
 def print_3_mistakes():
+    '''Display forth image with three mistake'''
     print("  |------|- ")
     print("  |      |  ")
     print("  |      o  ")
@@ -54,6 +59,7 @@ def print_3_mistakes():
 
 # 4 mistakes
 def print_4_mistakes():
+    '''Display fifth image with four mistake'''
     print("  |------|- ")
     print("  |      |  ")
     print("  |      o  ")
@@ -66,6 +72,7 @@ def print_4_mistakes():
 
 # 5 mistakes
 def print_5_mistakes():
+    '''Display sixth image with five mistakes'''
     print("  |------|- ")
     print("  |      |  ")
     print("  |      o  ")
@@ -79,6 +86,7 @@ def print_5_mistakes():
 
 # 6 mistakes
 def print_6_mistakes():
+    '''Display final image with all six mistakes'''
     print("  |------|- ")
     print("  |      |  ")
     print("  |      0  ")
@@ -92,6 +100,7 @@ def print_6_mistakes():
 
 # function to print game status
 def print_game_status(mistakes, guesses, remaining_guesses):
+    '''Call functions to display next image'''
     if mistakes == 0:
         print_0_mistakes()
     elif mistakes == 1:
@@ -117,6 +126,7 @@ def print_game_status(mistakes, guesses, remaining_guesses):
 
 # Create game loop
 def play_game():
+    '''This is the main game loop'''
 
     # Create list of words
     words = ["hangman", "band", "house", "stereo", "tree", "swim", "creator"]
@@ -187,6 +197,7 @@ def play_game():
 
 
 def menu():
+    '''This is th restart function'''
     print("Do you want to play again?")
     print('Y/N')
     answer = input()
