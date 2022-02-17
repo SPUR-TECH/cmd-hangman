@@ -122,8 +122,10 @@ def play_game():
     words = ["hangman", "band", "house", "stereo", "tree", "swim", "creator"]
 
     # Create alphabet
-    alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
-                "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    alphabet = ["A", "B", "C", "D", "E", "F",
+                "G", "H", "I", "J", "K", "L",
+                "M", "N", "O", "P", "Q", "R", "S",
+                "T", "U", "V", "W", "X", "Y", "Z"]
 
     # Create letters tried
     guesses = []
@@ -137,7 +139,7 @@ def play_game():
     # Mistakes made
     mistakes = 0
 
-        # Randomize word selection
+    # Randomize word selection
     word_index = random.randint(0, len(words)-1)
     word = words[word_index].upper()
     print(word)
@@ -146,9 +148,7 @@ def play_game():
     for i in range(len(word)):
         guesses.append('_')
 
-
     game_over = False
-    
     while not game_over:
         print_game_status(mistakes, guesses, remaining_guesses)
 
@@ -182,8 +182,9 @@ def play_game():
                     print_6_mistakes()
                     print(f"You lose! the word was '{word}'")
                     game_over = True
-            
+
     menu()
+
 
 def menu():
     print("Do you want to play again?")
@@ -197,5 +198,3 @@ def menu():
 
 
 play_game()
-
-       
