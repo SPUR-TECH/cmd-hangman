@@ -1,20 +1,6 @@
-
-'''import random to randomize words'''
+'''import necessary files'''
 import random
-
-print("                                   ")
-print("                                   ")
-print("LETS PLAY........")
-print("                                   ")
-print("|    |     /\\     |\\     |    ---- |\\    /|     /\\     |\\    |  |")
-print("|    |    /  \\    | \\    |  /      | \\  / |    /  \\    | \\   |  |")
-print("|----|   /----\\   |  \\   | |   --- |  \\/  |   /----\\   |  \\  |  |")
-print("|    |  /      \\  |   \\  | |     | |      |  /      \\  |   \\ |    ")
-print("|    | /        \\ |    \\ |  \\____| |      | /        \\ |    \\|  .")
-print("----------------------------------------------------------------")
-print("----------------------------------------------------------------")
-print("                                   ")
-print("                                   ")
+from os import system
 
 
 # No mistakes
@@ -139,6 +125,21 @@ def print_game_status(mistakes, guesses, remaining_guesses):
 # Create game loop
 def play_game():
     '''This is the main game loop'''
+    _ = system('clear')
+
+    print("                                   ")
+    print("                                   ")
+    print("LETS PLAY........")
+    print("                                   ")
+    print("|    |    /\\    |\\    |    ---- |\\    /|    /\\    |\\    |  |")
+    print("|    |   /  \\   | \\   |  /      | \\  / |   /  \\   | \\   |  |")
+    print("|----|  /----\\  |  \\  | |   --- |  \\/  |  /----\\  |  \\  |  |")
+    print("|    | /      \\ |   \\ | |     | |      | /      \\ |   \\ |    ")
+    print("|    |/        \\|    \\|  \\____| |      |/        \\|    \\|  .")
+    print("----------------------------------------------------------------")
+    print("----------------------------------------------------------------")
+    print("                                   ")
+    print("                                   ")
 
     # Create list of words
     words = ["hangman", "band", "house", "stereo", "tree", "swim", "creator"]
