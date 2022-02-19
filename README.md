@@ -79,6 +79,8 @@ Debugging throughout the project was the first step to testing also due to the n
 ## Credits:
 ---
 
+- Thanks to Code Institute for the Love sandwiches walk through for guidance to set up and deployment.
+
 - A big thank you to Jack mym mentor for helping me work out the used letter issue and restart issue and for everything else tht has made my coding journey easier.
 
 - Many thanks to Jo for easing my mind on the enumerate issue and the package installation process for my project.
@@ -88,3 +90,22 @@ Debugging throughout the project was the first step to testing also due to the n
 - Thanks to StudentEngineer for showing me that you can clear terminal on restart.
 
 - Thanks to Stack overflow for explaining that I need double \ to show 1 \ in order to build the hangman images. 
+
+## Deployment:
+---
+
+- Install requirements file with pip freeze > requirements.txt.
+- You will need a [Heroku](https://www.heroku.com/) account and sign in.
+- On the dashboard select (Create New)
+- Name the project, Be sure to name it something unique and select region then press create app.
+- Select settings in the sub menu.
+- Select reveal config vars and name it CREDS.
+- copy the creds.json file and paste it in the value section and press add.
+- In the next key put PORT in value put 8000 
+- Then press buildpack and add Python then save changes and Nodejs and save changes in that order.
+- Now press deploy at the top and select Github then connect to Github.
+- Type in the name of the repo and hit search then connect.
+- Enable automatic deploy then deploy branch.
+- click on view.
+
+JOB DONE........
