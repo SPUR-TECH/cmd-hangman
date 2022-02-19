@@ -6,7 +6,9 @@ from os import system
 # No mistakes
 def print_0_mistakes():
     '''Display first image with no mistakes'''
-    print("\u001b[33m  |------|- ")
+    # All the pieces of code with \u001b[--;1m are the colour changing codes
+    # from www.lihaoyi.com
+    print("\u001b[33;1m  |------|- ")
     print("  |      |  ")
     print("  |         ")
     print("  |         ")
@@ -19,10 +21,10 @@ def print_0_mistakes():
 # 1 mistake
 def print_1_mistakes():
     '''Display second image with one mistake'''
-    print("\u001b[33m  |------|- ")
+    print("\u001b[33;1m  |------|- ")
     print("  |      |  ")
-    print("  |      \u001b[31mo  ")
-    print("\u001b[33m  |         ")
+    print("  |      \u001b[31;1mo  ")
+    print("\u001b[33;1m  |         ")
     print("  |         ")
     print("  |         ")
     print(" /|\\       ")
@@ -32,12 +34,12 @@ def print_1_mistakes():
 # 2 mistakes
 def print_2_mistakes():
     '''Display third image with two mistake'''
-    print("\u001b[33m  |------|- ")
+    print("\u001b[33;1m  |------|- ")
     print("  |      |  ")
-    print("  |      \u001b[31mo  ")
-    print("\u001b[33m  |      \u001b[31m|  ")
-    print("\u001b[33m  |      \u001b[31m|  ")
-    print("\u001b[33m  |         ")
+    print("  |      \u001b[31;1mo  ")
+    print("\u001b[33;1m  |      \u001b[31;1m|  ")
+    print("\u001b[33;1m  |      \u001b[31;1m|  ")
+    print("\u001b[33;1m  |         ")
     print(" /|\\       ")
     print("/ | \\      ")
 
@@ -45,12 +47,12 @@ def print_2_mistakes():
 # 3 mistakes
 def print_3_mistakes():
     '''Display forth image with three mistake'''
-    print("\u001b[33m  |------|- ")
+    print("\u001b[33;1m  |------|- ")
     print("  |      |  ")
-    print("  |      \u001b[31mo  ")
-    print("\u001b[33m  |     \u001b[31m/|  ")
-    print("\u001b[33m  |      \u001b[31m|  ")
-    print("\u001b[33m  |         ")
+    print("  |      \u001b[31;1mo  ")
+    print("\u001b[33;1m  |     \u001b[31;1m/|  ")
+    print("\u001b[33;1m  |      \u001b[31;1m|  ")
+    print("\u001b[33;1m  |         ")
     print(" /|\\       ")
     print("/ | \\      ")
 
@@ -58,12 +60,12 @@ def print_3_mistakes():
 # 4 mistakes
 def print_4_mistakes():
     '''Display fifth image with four mistake'''
-    print("\u001b[33m  |------|- ")
+    print("\u001b[33;1m  |------|- ")
     print("  |      |  ")
-    print("  |      \u001b[31mo  ")
-    print("\u001b[33m  |     \u001b[31m/|\\")
-    print("\u001b[33m  |      \u001b[31m|  ")
-    print("\u001b[33m  |         ")
+    print("  |      \u001b[31;1mo  ")
+    print("\u001b[33;1m  |     \u001b[31;1m/|\\")
+    print("\u001b[33;1m  |      \u001b[31;1m|  ")
+    print("\u001b[33;1m  |         ")
     print(" /|\\       ")
     print("/ | \\      ")
 
@@ -71,13 +73,13 @@ def print_4_mistakes():
 # 5 mistakes
 def print_5_mistakes():
     '''Display sixth image with five mistakes'''
-    print("\u001b[33m  |------|- ")
+    print("\u001b[33;1m  |------|- ")
     print("  |      |  ")
-    print("  |      \u001b[31mo  ")
-    print("\u001b[33m  |     \u001b[31m/|\\")
-    print("\u001b[33m  |      \u001b[31m|  ")
-    print("\u001b[33m  |     \u001b[31m/   ")
-    print("\u001b[33m  |         ")
+    print("  |      \u001b[31;1mo  ")
+    print("\u001b[33;1m  |     \u001b[31;1m/|\\")
+    print("\u001b[33;1m  |      \u001b[31;1m|  ")
+    print("\u001b[33;1m  |     \u001b[31;1m/   ")
+    print("\u001b[33;1m  |         ")
     print(" /|\\       ")
     print("/ | \\      ")
 
@@ -85,13 +87,13 @@ def print_5_mistakes():
 # 6 mistakes
 def print_6_mistakes():
     '''Display final image with all six mistakes'''
-    print("\u001b[33m  |------|- ")
+    print("\u001b[33;1m  |------|- ")
     print("  |      |  ")
-    print("  |      \u001b[31m0  ")
-    print("\u001b[33m  |     \u001b[31m/|\\")
-    print("\u001b[33m  |      \u001b[31m|  ")
-    print("\u001b[33m  |     \u001b[31m/ \\")
-    print("\u001b[33m  |         ")
+    print("  |      \u001b[31;1m0  ")
+    print("\u001b[33;1m  |     \u001b[31;1m/|\\")
+    print("\u001b[33;1m  |      \u001b[31;1m|  ")
+    print("\u001b[33;1m  |     \u001b[31;1m/ \\")
+    print("\u001b[33;1m  |         ")
     print(" /|\\       ")
     print("/ | \\      ")
 
@@ -118,7 +120,7 @@ def print_game_status(mistakes, guesses, remaining_guesses):
 # user input
     print("word: ", end='')
     for element in guesses:
-        print(f"\u001b[32m{element} ", end='\u001b[37m')
+        print(f"\u001b[32;1m{element} ", end='\u001b[37;1m')
     print(f"\nYou have {remaining_guesses} guess(es) left")
 
 
@@ -129,8 +131,8 @@ def play_game():
 
     print("                                   ")
     print("                                   ")
-    print("\u001b[37mLETS PLAY........")
-    print("\u001b[32m                                   ")
+    print("\u001b[37;1mLETS PLAY........")
+    print("\u001b[32;1m                                   ")
     print("|    |    /\\    |\\    |    ---- |\\    /|    /\\    |\\    |  |")
     print("|    |   /  \\   | \\   |  /      | \\  / |   /  \\   | \\   |  |")
     print("|----|  /----\\  |  \\  | |   --- |  \\/  |  /----\\  |  \\  |  |")
@@ -175,35 +177,35 @@ def play_game():
         print_game_status(mistakes, guesses, remaining_guesses)
 
     # Users guesses
-        user_input = input("\u001b[37mPlease enter a letter:\n")
+        user_input = input("\u001b[37;1mPlease enter a letter:\n")
         letter = user_input.upper()
 
     # Display error message if not a letter
         if letter not in alphabet:
-            print("\u001b[31mThats not a letter. Please try again")
+            print("\u001b[31;1mThats not a letter. Please try again")
         elif letter in used_letters:
-            print('\u001b[31m"ALREADY USED!!"')
+            print('\u001b[31;1m"ALREADY USED!!"')
         else:
             used_letters += user_input.upper()
-            print(f'"USED LETTERS:" \u001b[32m{used_letters}')
+            print(f'"USED LETTERS:" \u001b[32;1m{used_letters}')
             # Display win message if all letters guessed
             if letter in word:
                 for i in range(len(word)):
                     if word[i] == letter:
                         guesses[i] = letter
                 if '_' not in guesses:
-                    print(f"\u001b[32mYOU WIN!!! the word was '{word}'")
+                    print(f"\u001b[32;1mYOU WIN!!! the word was '{word}'")
                     game_over = True
             # Display try again message if letter not in word and
             #  lose message when all tries are used and end game
             else:
-                print("\u001b[31m sorry, try again")
+                print("\u001b[31;1m sorry, try again")
                 remaining_guesses -= 1
                 mistakes += 1
                 if mistakes == 6:
                     print_6_mistakes()
-                    print("\u001b[31m YOU LOSE!")
-                    print(f"the word was \u001b[32m'{word}'\u001b[37m")
+                    print("\u001b[31;1m YOU LOSE!")
+                    print(f"the word was \u001b[32;1m'{word}'\u001b[37;1m")
                     game_over = True
 
     menu()
@@ -211,14 +213,14 @@ def play_game():
 
 def menu():
     '''This is the restart function'''
-    print("\u001b[37mDo you want to play again?")
-    print('\u001b[32mY/\u001b[31mN')
+    print("\u001b[37;1mDo you want to play again?")
+    print('\u001b[32;1mY/\u001b[31mN')
     answer = input()
     print(answer)
     if answer.upper() == 'Y':
         play_game()
     if answer.upper() == 'N':
-        print("\u001b[32m COME BACK SOON!!!")
+        print("\u001b[32;1m COME BACK SOON!!!")
 
 
 play_game()
