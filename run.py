@@ -126,7 +126,8 @@ def print_game_status(mistakes, guesses, remaining_guesses):
 
 # Create game loop
 def play_game():
-    '''This is the main game loop'''
+    '''This is the main game loop and will continue till word is
+     found or man is hung'''
     _ = system('clear')
 
     print("                                   ")
@@ -144,7 +145,9 @@ def play_game():
     print("                                   ")
 
     # Create list of words
-    words = ["hangman", "band", "house", "stereo", "tree", "swim", "creator"]
+    words = ["hangman", "band", "house", "stereo", "tree", "swim", "creator"
+             "cheese", "doctor", "polite", "elephant", "river", "chair",
+             "elevator", "worker", "climber", "coder"]
 
     # Create alphabet
     alphabet = ["A", "B", "C", "D", "E", "F",
