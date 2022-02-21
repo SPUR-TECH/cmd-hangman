@@ -57,6 +57,9 @@ Underneath is a large title of HANGMAN handmade with keyboard symbols and tediou
 ## Testing:
 ---
 
+I tested the validation of inputs for example if letter is not in the alphabet then it's not a valid input including numbers spaces etc. and gave a warning message to user
+("This not a letter please try again") 
+
 Debugging throughout the project was the first step to testing also due to the nature of the project things won't work unless you have no errors. I also ran the code through PEP8 and came back with no errors.
 
 ![](images/pep8-test.png)

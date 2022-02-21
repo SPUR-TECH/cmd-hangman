@@ -2,13 +2,17 @@
 import random
 from os import system
 
+# All the pieces of code with (\u001b[--;1m) are the colour changing codes
+# from www.lihaoyi.com
+GREEN = "\u001b[32;1m"
+RED = "\u001b[31;1m"
+YELLOW = "\u001b[33;1m"
+WHITE = "\u001b[37;1m"
 
-# No mistakes
+
 def print_0_mistakes():
     '''Display first image with no mistakes'''
-    # All the pieces of code with \u001b[--;1m are the colour changing codes
-    # from www.lihaoyi.com
-    print("\u001b[33;1m  |------|- ")
+    print(f"{YELLOW}  |------|- ")
     print("  |      |  ")
     print("  |         ")
     print("  |         ")
@@ -18,87 +22,80 @@ def print_0_mistakes():
     print("/ | \\      ")
 
 
-# 1 mistake
 def print_1_mistakes():
     '''Display second image with one mistake'''
-    print("\u001b[33;1m  |------|- ")
+    print(f"{YELLOW}  |------|- ")
     print("  |      |  ")
-    print("  |      \u001b[31;1mo  ")
-    print("\u001b[33;1m  |         ")
+    print(f"  |      {RED}o  ")
+    print(f"{YELLOW}  |         ")
     print("  |         ")
     print("  |         ")
     print(" /|\\       ")
     print("/ | \\      ")
 
 
-# 2 mistakes
 def print_2_mistakes():
     '''Display third image with two mistake'''
-    print("\u001b[33;1m  |------|- ")
+    print(f"{YELLOW}  |------|- ")
     print("  |      |  ")
-    print("  |      \u001b[31;1mo  ")
-    print("\u001b[33;1m  |      \u001b[31;1m|  ")
-    print("\u001b[33;1m  |      \u001b[31;1m|  ")
-    print("\u001b[33;1m  |         ")
+    print(f"  |      {RED}o  ")
+    print(f"{YELLOW}  |      {RED}|  ")
+    print(f"{YELLOW}  |      {RED}|  ")
+    print(f"{YELLOW}  |         ")
     print(" /|\\       ")
     print("/ | \\      ")
 
 
-# 3 mistakes
 def print_3_mistakes():
     '''Display forth image with three mistake'''
-    print("\u001b[33;1m  |------|- ")
+    print(f"{YELLOW}  |------|- ")
     print("  |      |  ")
-    print("  |      \u001b[31;1mo  ")
-    print("\u001b[33;1m  |     \u001b[31;1m/|  ")
-    print("\u001b[33;1m  |      \u001b[31;1m|  ")
-    print("\u001b[33;1m  |         ")
+    print(f"  |      {RED}o  ")
+    print(f"{YELLOW}  |     {RED}/|  ")
+    print(f"{YELLOW}  |      {RED}|  ")
+    print(f"{YELLOW}  |         ")
     print(" /|\\       ")
     print("/ | \\      ")
 
 
-# 4 mistakes
 def print_4_mistakes():
     '''Display fifth image with four mistake'''
-    print("\u001b[33;1m  |------|- ")
+    print(f"{YELLOW}  |------|- ")
     print("  |      |  ")
-    print("  |      \u001b[31;1mo  ")
-    print("\u001b[33;1m  |     \u001b[31;1m/|\\")
-    print("\u001b[33;1m  |      \u001b[31;1m|  ")
-    print("\u001b[33;1m  |         ")
+    print(f"  |      {RED}o  ")
+    print(f"{YELLOW}  |     {RED}/|\\")
+    print(f"{YELLOW}  |      {RED}|  ")
+    print(f"{YELLOW}  |         ")
     print(" /|\\       ")
     print("/ | \\      ")
 
 
-# 5 mistakes
 def print_5_mistakes():
     '''Display sixth image with five mistakes'''
-    print("\u001b[33;1m  |------|- ")
+    print(f"{YELLOW}  |------|- ")
     print("  |      |  ")
-    print("  |      \u001b[31;1mo  ")
-    print("\u001b[33;1m  |     \u001b[31;1m/|\\")
-    print("\u001b[33;1m  |      \u001b[31;1m|  ")
-    print("\u001b[33;1m  |     \u001b[31;1m/   ")
-    print("\u001b[33;1m  |         ")
+    print(f"  |      {RED}o  ")
+    print(f"{YELLOW}  |     {RED}/|\\")
+    print(f"{YELLOW}  |      {RED}|  ")
+    print(f"{YELLOW}  |     {RED}/   ")
+    print(f"{YELLOW}  |         ")
     print(" /|\\       ")
     print("/ | \\      ")
 
 
-# 6 mistakes
 def print_6_mistakes():
     '''Display final image with all six mistakes'''
-    print("\u001b[33;1m  |------|- ")
+    print(f"{YELLOW}  |------|- ")
     print("  |      |  ")
-    print("  |      \u001b[31;1m0  ")
-    print("\u001b[33;1m  |     \u001b[31;1m/|\\")
-    print("\u001b[33;1m  |      \u001b[31;1m|  ")
-    print("\u001b[33;1m  |     \u001b[31;1m/ \\")
-    print("\u001b[33;1m  |         ")
+    print(f"  |      {RED}0  ")
+    print(f"{YELLOW}  |     {RED}/|\\")
+    print(f"{YELLOW}  |      {RED}|  ")
+    print(f"{YELLOW}  |     {RED}/ \\")
+    print(f"{YELLOW}  |         ")
     print(" /|\\       ")
     print("/ | \\      ")
 
 
-# function to print game status
 def print_game_status(mistakes, guesses, remaining_guesses):
     '''Call functions to display next image'''
     if mistakes == 0:
@@ -120,11 +117,10 @@ def print_game_status(mistakes, guesses, remaining_guesses):
 # user input
     print("word: ", end='')
     for element in guesses:
-        print(f"\u001b[32;1m{element} ", end='\u001b[37;1m')
+        print(f"{GREEN}{element} ", end=f'{WHITE}')
     print(f"\nYou have {remaining_guesses} guess(es) left")
 
 
-# Create game loop
 def play_game():
     '''This is the main game loop and will continue till word is
      found or man is hung'''
@@ -132,8 +128,8 @@ def play_game():
 
     print("                                   ")
     print("                                   ")
-    print("\u001b[37;1mLETS PLAY........")
-    print("\u001b[32;1m                                   ")
+    print(f"{WHITE}LETS PLAY........")
+    print(f"{GREEN}                                   ")
     print("|    |    /\\    |\\    |    ---- |\\    /|    /\\    |\\    |  |")
     print("|    |   /  \\   | \\   |  /      | \\  / |   /  \\   | \\   |  |")
     print("|----|  /----\\  |  \\  | |   --- |  \\/  |  /----\\  |  \\  |  |")
@@ -144,18 +140,18 @@ def play_game():
     print("                                   ")
     print("                                   ")
 
-    # Create list of words
+    # List of words randomly chosen
     words = ["hangman", "band", "house", "stereo", "tree", "swim", "creator"
              "cheese", "doctor", "polite", "elephant", "river", "chair",
-             "elevator", "worker", "climber", "coder"]
+             "elevator", "worker", "climber", "coder", "family", "broken"]
 
-    # Create alphabet
+    # Alphabet to validate user input
     alphabet = ["A", "B", "C", "D", "E", "F",
                 "G", "H", "I", "J", "K", "L",
                 "M", "N", "O", "P", "Q", "R", "S",
-                "T", "U", "V", "W", "X", "Y", "Zm"]
+                "T", "U", "V", "W", "X", "Y", "Z"]
 
-    # Create letters tried
+    # Each letter of the word
     guesses = []
 
     # Create used letters
@@ -180,35 +176,35 @@ def play_game():
         print_game_status(mistakes, guesses, remaining_guesses)
 
     # Users guesses
-        user_input = input("\u001b[37;1mPlease enter a letter:\n")
+        user_input = input(f"{WHITE}Please enter a letter:\n")
         letter = user_input.upper()
 
     # Display error message if not a letter
         if letter not in alphabet:
-            print("\u001b[31;1mThats not a letter. Please try again")
+            print(f"{RED}Thats not a letter. Please try again")
         elif letter in used_letters:
-            print('\u001b[31;1m"ALREADY USED!!"')
+            print(f'{RED}"ALREADY USED!!"')
         else:
             used_letters += user_input.upper()
-            print(f'"USED LETTERS:" \u001b[32;1m{used_letters}')
+            print(f'"USED LETTERS:" {GREEN}{used_letters}')
             # Display win message if all letters guessed
             if letter in word:
                 for i in range(len(word)):
                     if word[i] == letter:
                         guesses[i] = letter
                 if '_' not in guesses:
-                    print(f"\u001b[32;1mYOU WIN!!! the word was '{word}'")
+                    print(f"{GREEN}YOU WIN!!! the word was '{word}'")
                     game_over = True
             # Display try again message if letter not in word and
             #  lose message when all tries are used and end game
             else:
-                print("\u001b[31;1m sorry, try again")
+                print(f"{RED} sorry, try again")
                 remaining_guesses -= 1
                 mistakes += 1
                 if mistakes == 6:
                     print_6_mistakes()
-                    print("\u001b[31;1m YOU LOSE!")
-                    print(f"the word was \u001b[32;1m'{word}'\u001b[37;1m")
+                    print(f"{RED} YOU LOSE!")
+                    print(f"the word was {GREEN}'{word}'{WHITE}")
                     game_over = True
 
     menu()
@@ -216,14 +212,14 @@ def play_game():
 
 def menu():
     '''This is the restart function'''
-    print("\u001b[37;1mDo you want to play again?")
-    print('\u001b[32;1mY/\u001b[31mN')
+    print(f"{WHITE}Do you want to play again?")
+    print(f'{GREEN}Y/{RED}N')
     answer = input()
     print(answer)
     if answer.upper() == 'Y':
         play_game()
     if answer.upper() == 'N':
-        print("\u001b[32;1m COME BACK SOON!!!")
+        print(f"{GREEN} COME BACK SOON!!!")
 
 
 play_game()
